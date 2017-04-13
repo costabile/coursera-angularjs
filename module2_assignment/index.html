@@ -1,0 +1,42 @@
+<!-- HTML for Module 2 Assignment
+   - Course: Single Page Web Apps with AngularJS (Coursera)
+   - Instructor: Yaakov Chaikin
+   -
+   - Written by: Jason Costabile
+  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 2</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="ShoppingListCheckOff">
+    <h1>Jason Costabile -- Assignment 2 Solution</h1>
+    <div ng-controller="ToBuyController as toBuy">
+      <h2>To Buy</h2>
+      <div ng-if="toBuy.items.length == 0">
+        Everything is bought!
+      </div>
+      <ul>
+        <li ng-repeat="item in toBuy.items">
+          Buy {{item.quantity}} {{item.name}}. <button ng-click="toBuy.buyItem($index)">Bought</button>
+        </li>
+      </ul>
+    </div>
+    <div ng-controller="AlreadyBoughtController as bought">
+      <h2>Already Bought</h2>
+      <div ng-if="bought.items.length == 0">
+        Nothing bought yet.
+      </div>
+      <ul>
+        <li ng-repeat="item in bought.items">
+          Bought {{item.quantity}} {{item.name}}.
+        </li>
+      </ul>
+    </div>
+  </body>
+
+</html>
