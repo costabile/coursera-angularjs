@@ -1,0 +1,13 @@
+<!-- Custom Directive Template for Module 3 Assignment
+   - Course: Single Page Web Apps with AngularJS (Coursera)
+   - Instructor: Yaakov Chaikin
+   -
+   - Written by: Jason Costabile
+  -->
+
+<ul>
+  <li ng-repeat="item in found">
+    {{item.name}}, {{item.short_name}}, {{item.description}}
+    <button ng-click="onRemove({index:$index})">Don't want this one!</button>
+  </li>
+</ul>
